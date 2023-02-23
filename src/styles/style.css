@@ -56,3 +56,24 @@
     flex-wrap: wrap;
     width: 690px;
 }
+.end{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+}
+.palavraescolhida{
+    display: flex;
+    margin-right: 50px;
+    
+}
+.palavraescolhida p{
+    margin: 10px;
+    margin-top: 282px;
+    font-size: 50px;
+    font-weight: 700;
+}
+
+.esconder{
+    display: none;
+}
