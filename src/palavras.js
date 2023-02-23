@@ -24,4 +24,7 @@ const palavras = [
     "zebra", "zagueiro", "zero", "zoeira", "zepelim", "zinco", "zumbido"
 ]
 
-export default palavras
+const palavra = Math.floor(Math.random() * palavras.length);
+const arraypalavra = palavras[palavra].split("")
+
+export default arraypalavra
