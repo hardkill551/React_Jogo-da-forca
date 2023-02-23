@@ -18,10 +18,10 @@ export default function Jogo({habilitar, setHabilitar, arraypalavra, letraCerta,
     }
     return (
         <div className="jogo">
-        <img src={imagemDaForca[contagemErros]} className="imagem"></img>
+        <img src={imagemDaForca[contagemErros]} data-test="game-image" className="imagem"></img>
         <div className="end">
         <button className="botao" data-test="choose-word" onClick={habilitar => setHabilitar(false)}>Escolher Palavra</button>
-        <div className={habilitar ? "esconder" : "palavraescolhida"}>
+        <div data-test="word" className={habilitar ? "esconder" : "palavraescolhida"}>
             {arraypalavra.map(i => <span>{letraCerta.includes(i)?i:"_"}</span>)}
         </div>
         </div>
