@@ -6,7 +6,7 @@ import forca4 from "./assets/forca4.png"
 import forca5 from "./assets/forca5.png"
 import forca6 from "./assets/forca6.png"
 
-export default function Jogo({habilitar, setHabilitar, arraypalavra, letraCerta, setLetraCerta, contagemErros, setContagemErros}){
+export default function Jogo({habilitar, setHabilitar, arraypalavra, letraCerta, setLetraCerta, contagemErros, setContagemErros, errou, setErrou, acertou, setAcertou}){
     const imagemDaForca = {
         0: forca0,
         1: forca1,
@@ -21,8 +21,8 @@ export default function Jogo({habilitar, setHabilitar, arraypalavra, letraCerta,
         <img src={imagemDaForca[contagemErros]} data-test="game-image" className="imagem"></img>
         <div className="end">
         <button className="botao" data-test="choose-word" onClick={habilitar => setHabilitar(false)}>Escolher Palavra</button>
-        <div data-test="word" className={habilitar ? "esconder" : "palavraescolhida"}>
-            {arraypalavra.map(i => <span>{letraCerta.includes(i)?i:"_"}</span>)}
+        <div data-test="word" className={`${habilitar ? "esconder" : "palavraescolhida"} ${errou ? "erro" : ""} ${acertou ? "acerto" : ""}`}>
+            {arraypalavra.map(i => <span>{letraCerta.includes(i)||contagemErros==6?i:"_"}</span>)}
         </div>
         </div>
         </div>

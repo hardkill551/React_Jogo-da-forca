@@ -74,6 +74,13 @@
     font-weight: 700;
 }
 
+.erro{
+    color: #FF0000;
+}
+.acerto{
+    color: #27AE60;
+}
+
 .esconder{
     display: none;
 }
