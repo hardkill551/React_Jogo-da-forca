@@ -1,3 +1,4 @@
+import { useState } from "react"
 import forca0 from "./assets/forca0.png"
 import forca1 from "./assets/forca1.png"
 import forca2 from "./assets/forca2.png"
@@ -16,15 +17,26 @@ export default function Jogo({habilitar, setHabilitar, arraypalavra, letraCerta,
         5: forca5,
         6: forca6
     }
+    const [contador, setContador] = useState(0)
     return (
         <div className="jogo">
-        <img src={imagemDaForca[contagemErros]} data-test="game-image" className="imagem"></img>
+        <img src={imagemDaForca[contagemErros]} alt="forca" data-test="game-image" className="imagem"></img>
         <div className="end">
-        <button className="botao" data-test="choose-word" onClick={habilitar => setHabilitar(false)}>Escolher Palavra</button>
+        <button className="botao" data-test="choose-word" onClick={Reiniciar}>Escolher Palavra</button>
         <div data-test="word" className={`${habilitar ? "esconder" : "palavraescolhida"} ${errou ? "erro" : ""} ${acertou ? "acerto" : ""}`}>
-            {arraypalavra.map(i => <span>{letraCerta.includes(i)||contagemErros==6?i:"_"}</span>)}
+            {arraypalavra.map(i => <span>{letraCerta.includes(i)||contagemErros===6?i:"_"}</span>)}
         </div>
         </div>
         </div>
     )
+
+    function Reiniciar(habilitar){
+        if(contador===0){
+        setHabilitar(false)
+        setContador(contador+1)
+        }
+        else{
+            window.location.reload()
+        }
+    }
 }
