@@ -6,8 +6,9 @@ import forca3 from "./assets/forca3.png"
 import forca4 from "./assets/forca4.png"
 import forca5 from "./assets/forca5.png"
 import forca6 from "./assets/forca6.png"
+import palavras from "./palavras.js"
 
-export default function Jogo({habilitar, setHabilitar, arraypalavra, letraCerta, setLetraCerta, contagemErros, setContagemErros, errou, setErrou, acertou, setAcertou}){
+export default function Jogo({habilitar, setHabilitar, arraypalavra, letraCerta, setLetraCerta, contagemErros, setContagemErros, errou, setErrou, acertou, setAcertou,setLetraClicada, setArrayPalavra}){
     const imagemDaForca = {
         0: forca0,
         1: forca1,
@@ -30,13 +31,20 @@ export default function Jogo({habilitar, setHabilitar, arraypalavra, letraCerta,
         </div>
     )
 
-    function Reiniciar(habilitar){
+    function Reiniciar(){
         if(contador===0){
         setHabilitar(false)
         setContador(contador+1)
         }
         else{
-            window.location.reload()
+            const palavra = Math.floor(Math.random() * palavras.length);
+            console.log(palavra)
+            setArrayPalavra(palavras[palavra].split(""))
+            setErrou(false)
+            setContagemErros(0)
+            setLetraCerta([])
+            setAcertou(false)
+            setLetraClicada([])
         }
     }
 }

@@ -1,10 +1,5 @@
-import { useState } from "react"
-
-export default function Letras({habilitar, setHabilitar, arraypalavra, letraCerta, setLetraCerta, contagemErros, setContagemErros, errou, setErrou, acertou, setAcertou}){
+export default function Letras({habilitar, arraypalavra, letraCerta, setLetraCerta, contagemErros, setContagemErros, errou, setErrou, acertou, setAcertou, letraClicada ,setLetraClicada}){
     const alfabeto = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
-    const [letraClicada, setLetraClicada] = useState([])
-    console.log(arraypalavra)
-    console.log(letraCerta)
     return (
         <div className="centralizarletras">
         <div className="letras" >
