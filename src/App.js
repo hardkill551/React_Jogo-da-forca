@@ -1,6 +1,7 @@
 import { useState } from "react";
-import Jogo from "./Jogo.js"
-import Letras from "./Letras.js"
+import Jogo from "./components/Jogo.js"
+import Letras from "./components/Letras.js"
+import Chute from "./components/Chute.js"
 import palavras from "./palavras.js"
 
 const palavra = Math.floor(Math.random() * palavras.length);
@@ -19,6 +20,7 @@ function App() {
     <div className="App">
       <Jogo habilitar={habilitar} setHabilitar={setHabilitar} arraypalavra={arraypalavra} letraCerta={letraCerta} setLetraCerta={setLetraCerta} contagemErros={contagemErros} setContagemErros={setContagemErros} errou={errou} setErrou={setErrou} acertou={acertou} setAcertou={setAcertou} setLetraClicada={setLetraClicada} setArrayPalavra={setArrayPalavra}/>
       <Letras habilitar={habilitar} arraypalavra={arraypalavra} letraCerta={letraCerta} setLetraCerta={setLetraCerta} contagemErros={contagemErros} setContagemErros={setContagemErros} errou={errou}setErrou={setErrou} acertou={acertou} setAcertou={setAcertou} letraClicada={letraClicada} setLetraClicada={setLetraClicada}/>
+      <Chute arraypalavra={arraypalavra} letraCerta={letraCerta} setLetraCerta={setLetraCerta} setAcertou={setAcertou} setErrou={setErrou} setContagemDeErros={setContagemErros} habilitar={habilitar} errou={errou} acertou={acertou}/>
     </div>
   );
 }

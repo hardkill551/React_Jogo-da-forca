@@ -1,12 +1,12 @@
 import { useState } from "react"
-import forca0 from "./assets/forca0.png"
-import forca1 from "./assets/forca1.png"
-import forca2 from "./assets/forca2.png"
-import forca3 from "./assets/forca3.png"
-import forca4 from "./assets/forca4.png"
-import forca5 from "./assets/forca5.png"
-import forca6 from "./assets/forca6.png"
-import palavras from "./palavras.js"
+import forca0 from "../assets/forca0.png"
+import forca1 from "../assets/forca1.png"
+import forca2 from "../assets/forca2.png"
+import forca3 from "../assets/forca3.png"
+import forca4 from "../assets/forca4.png"
+import forca5 from "../assets/forca5.png"
+import forca6 from "../assets/forca6.png"
+import palavras from "../palavras.js"
 
 export default function Jogo({habilitar, setHabilitar, arraypalavra, letraCerta, setLetraCerta, contagemErros, setContagemErros, errou, setErrou, acertou, setAcertou,setLetraClicada, setArrayPalavra}){
     const imagemDaForca = {
@@ -38,7 +38,6 @@ export default function Jogo({habilitar, setHabilitar, arraypalavra, letraCerta,
         }
         else{
             const palavra = Math.floor(Math.random() * palavras.length);
-            console.log(palavra)
             setArrayPalavra(palavras[palavra].split(""))
             setErrou(false)
             setContagemErros(0)
