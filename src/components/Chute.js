@@ -5,7 +5,7 @@ export default function Chute({arraypalavra, setLetraCerta, setAcertou, setErrou
     return (
         <div className="chute">
             <span className="chuteSpan">Já sei a palavra!</span>
-            <input data-test="guess-button" value={input} disabled={habilitar||errou||acertou} onChange={e => setInput(e.target.value)} className="chuteInput"></input>
+            <input data-test="guess-input" value={input} disabled={habilitar||errou||acertou} onChange={e => setInput(e.target.value)} className="chuteInput"></input>
             <button data-test="guess-button" onClick={comparar} className="chuteButton letra" disabled={habilitar||errou||acertou}>Chutar</button>
         </div>
     )
